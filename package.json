@@ -1,0 +1,73 @@
+{
+  "name": "dsh-media-web-preview",
+  "version": "1.0.0",
+  "description": "In-browser audio and video previews in the DSH right Sidebar, backed by an authenticated byte-range media route so a remote browser can play and seek large files without opening a native app on the Host.",
+  "license": "MIT",
+  "author": "Wilson Cheng <wilson.cheng.assistant@gmail.com>",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/**/*.js",
+    "cordis.patch.yml",
+    "README.md",
+    "README.zh.md",
+    "CHANGELOG.md",
+    "LICENSE",
+    "screenshots.json",
+    "docs/*.png"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "video",
+    "audio",
+    "preview",
+    "media",
+    "player",
+    "range",
+    "streaming"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wilsonchengassistant/dsh-media-web-preview.git"
+  },
+  "homepage": "https://github.com/wilsonchengassistant/dsh-media-web-preview#readme",
+  "bugs": {
+    "url": "https://github.com/wilsonchengassistant/dsh-media-web-preview/issues"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.mjs"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-slots",
+        "@deepseek-ai/dsh-client-ui-sidebar-right",
+        "@deepseek-ai/dsh-client-ui-sidebar-documentpreview"
+      ]
+    },
+    "compatibility": {
+      "dshReleases": {
+        "0.2.0-rc.2": "compatible"
+      }
+    }
+  }
+}

@@ -38,6 +38,10 @@ memory or into the conversation.
 - **Localized** — English and Simplified Chinese dictionaries.
 - **Zero runtime dependencies** — one Host module and one browser bundle.
 
+![A video playing in the right Sidebar preview pane, with the file path in the header](docs/preview-video.png)
+
+![An audio file playing in the right Sidebar preview pane](docs/preview-audio.png)
+
 ## Formats
 
 | Kind | Suffixes |
